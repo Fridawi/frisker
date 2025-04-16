@@ -35,7 +35,7 @@ ul {
 
 @media (max-width: 767px) {
   .container {
-    width: 500px;
+    width: 300px;
   }
 }
 
@@ -45,9 +45,9 @@ ul {
   }
 }
 
-@media (min-width: 1023px) {
+@media (min-width: 1024px) and (max-width: 2560px) {
   .container {
-    width: 1600px;
+    width: 1000px;
   }
 }
 
@@ -59,6 +59,7 @@ header {
   background-color: var(--main-color);
   color: white;
 }
+
 header .container {
   display: flex;
   justify-content: start;
@@ -66,14 +67,15 @@ header .container {
   position: relative;
   min-height: 97px;
 }
+
 .logo {
   font-family: "Concert One";
   color: var(--font-color-secondry);
   font-size: 43px;
   font-weight: 400;
   border-right: 1px solid #575757;
-  padding-right: 40px;
-  padding-top: 10px;
+  /* padding-right: 40px; */
+  /* padding-top: 10px; */
   height: 72px;
   margin-right: 20px;
 }
@@ -130,17 +132,13 @@ header nav .form {
   margin-inline-start: auto;
   background-color: var(--box-background-color);
   padding: 15px;
-  width: 154px;
+  width: 150px;
   border-radius: 67px;
   font-size: 23px;
   color: var(--font-color-main);
 }
 
 @media (max-width: 767px) {
-  header .container {
-    margin-left: 30px;
-  }
-
   header nav ul {
     justify-content: flex-end;
   }
@@ -171,6 +169,7 @@ header nav .form {
   header nav .form {
     order: 1; /* Move .form above toggle-menu */
     margin-right: 30px;
+    width: 100px;
     font-size: 15px;
     padding: 5px;
   }
@@ -185,12 +184,12 @@ header nav .form {
   }
 }
 
-@media (min-width: 769px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   header nav .toggle-menu {
     display: block;
   }
   header .container {
-    margin-left: 200px;
+    margin-left: auto;
   }
 
   header nav {
@@ -231,6 +230,14 @@ header nav .form {
     display: none;
   }
 }
+
+@media (min-width: 1024px) and (max-width: 2560px) {
+  .logo {
+    padding-right: 40px;
+    padding-top: 10px;
+  }
+}
+
 /* End Header */
 
 /* Start Landing */
@@ -240,7 +247,7 @@ header nav .form {
 
 .landing .container {
   position: relative;
-  min-height: calc(100vh - 73px);
+  /* min-height: calc(100vh - 73px); */
   display: flex;
   align-items: center;
 }
@@ -253,7 +260,7 @@ header nav .form {
 }
 
 .landing .image img {
-  position: relative;
+  /* position: relative; */
   width: 795px;
   height: 657px;
   bottom: -110px;
@@ -262,7 +269,7 @@ header nav .form {
 .landing .text {
   flex: 1;
   font-family: "Concert One";
-  margin-bottom: 275px;
+  /* margin-bottom: 275px; */
 }
 
 .landing .text:first-child {
@@ -298,26 +305,33 @@ header nav .form {
   border-radius: 7px;
   z-index: 1;
 }
+
 @media (max-width: 767px) {
   .landing .container {
     flex-direction: column;
   }
 
   .landing .image .paragraph {
-    position: absolute;
+    /* position: absolute; */
     text-align: center;
-    padding: 25px 50px;
+    padding: 20px 8px;
     bottom: 310px;
     font-size: 15px;
   }
 
+  .landing .image {
+    width: 280px;
+    order: 2;
+  }
   .landing .image img {
-    width: 370px;
+    max-width: 100%;
     height: 290px;
     bottom: -200px;
   }
   .landing .text {
-    position: absolute;
+    width: 290px;
+    display: flex;
+    justify-content: center;
   }
 
   .landing .text:last-child {
@@ -325,12 +339,12 @@ header nav .form {
   }
 
   .landing .text p {
-    font-size: 80px;
+    font-size: 60px;
   }
 
   .get-btn {
     width: 250px;
-    position: absolute;
+    /* position: absolute; */
     bottom: 250px;
     font-size: 23px;
     padding: 15px;
@@ -348,14 +362,18 @@ header nav .form {
     bottom: 85px;
     font-size: 30px;
   }
+  .landing .image {
+    order: 2;
+  }
   .landing .image img {
-    width: 700px;
+    max-width: 100%;
     height: 580px;
     bottom: -350px;
-    margin-bottom: 460px;
+    margin-bottom: 110px;
   }
   .landing .text {
-    position: absolute;
+    display: flex;
+    justify-content: center;
   }
 
   .landing .text:last-child {
@@ -375,12 +393,47 @@ header nav .form {
   }
 }
 
+@media (min-width: 1024px) and (max-width: 2560px) {
+  .landing .container {
+    margin-top: 100px;
+    margin-bottom: 90px;
+  }
+  .landing .image {
+    width: 900px;
+  }
+  .landing .image img {
+    max-width: 100%;
+    height: 600px;
+    /*bottom: -200px; */
+  }
+  .landing .image .paragraph {
+    position: absolute;
+    text-align: center;
+    padding: 25px 40px;
+    bottom: 0;
+    font-size: 30px;
+  }
+  .get-btn {
+    position: absolute;
+    bottom: -90px;
+    font-size: 50px;
+    padding: 20px 40px;
+  }
+  .landing .container {
+    align-items: flex-start;
+  }
+  .landing .text p {
+    font-size: 70px;
+  }
+}
 /* End Landing */
 
 /* Start clients */
 .clients {
   position: relative;
-  height: 750px;
+  display: flex;
+  justify-content: center;
+  /* height: 750px; */
 }
 
 .clients .container {
@@ -389,7 +442,7 @@ header nav .form {
   gap: 150px;
   margin: 0 180px;
   background-color: var(--section-background-color);
-  padding-bottom: 150px;
+  /* padding-bottom: 150px; */
 }
 
 .clients .container .box {
@@ -450,14 +503,23 @@ header nav .form {
 
 @media (max-width: 767px) {
   .clients .container {
-    width: 400px;
+    width: 300px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 150px;
-    margin: 0 40px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0;
+    margin: 10px;
   }
   .clients .container .box {
+    padding: 10px;
     margin-bottom: 50px;
+  }
+  .box::after {
+    font-size: 70px;
+    right: -20px;
+  }
+  .box::before {
+    font-size: 70px;
+    left: -20px;
   }
 }
 
@@ -476,4 +538,30 @@ header nav .form {
   }
 }
 
+@media (min-width: 1024px) and (max-width: 2560px) {
+  .clients .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 60px;
+    margin: 0;
+  }
+  .clients .container .box {
+    margin-bottom: 50px;
+    padding: 10px;
+  }
+  .clients .container .box img {
+    right: 90px;
+  }
+  .box::after {
+    font-size: 70px;
+    right: -20px;
+  }
+  .box::before {
+    font-size: 70px;
+    left: -20px;
+  }
+  .clients .container .box p {
+    font-size: 25px;
+  }
+}
 /* End clients */
